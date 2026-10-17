@@ -1,0 +1,10 @@
+qiskit==2.6.0
+qiskit-aer==0.17.2
+numpy==2.5.4
+scipy==1.18.1
+dimod==0.12.22
+dwave-samplers==1.8.0
+dwave-neal==0.6.0
+ortools==9.15.6755
+matplotlib==3.11.2
+pytest==9.1.1
