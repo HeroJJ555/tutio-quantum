@@ -1,0 +1,85 @@
+{
+  "instance": "instance_3x3_due",
+  "method": "QAOA p=2 (Qiskit state-vector simulator), permutation QUBO, weighted tardiness, 9 vars",
+  "makespan": 9,
+  "weighted_tardiness": 2,
+  "jobs": [
+    {
+      "job": "Z1",
+      "weight": 1,
+      "due_date": 5,
+      "completion": 5,
+      "tardiness": 0
+    },
+    {
+      "job": "Z2",
+      "weight": 1,
+      "due_date": 7,
+      "completion": 9,
+      "tardiness": 2
+    },
+    {
+      "job": "Z3",
+      "weight": 3,
+      "due_date": 7,
+      "completion": 7,
+      "tardiness": 0
+    }
+  ],
+  "schedule": [
+    {
+      "job": "Z1",
+      "machine": "T",
+      "start": 0,
+      "end": 2
+    },
+    {
+      "job": "Z1",
+      "machine": "F",
+      "start": 2,
+      "end": 3
+    },
+    {
+      "job": "Z3",
+      "machine": "T",
+      "start": 2,
+      "end": 4
+    },
+    {
+      "job": "Z1",
+      "machine": "S",
+      "start": 3,
+      "end": 5
+    },
+    {
+      "job": "Z3",
+      "machine": "F",
+      "start": 4,
+      "end": 6
+    },
+    {
+      "job": "Z2",
+      "machine": "T",
+      "start": 4,
+      "end": 5
+    },
+    {
+      "job": "Z2",
+      "machine": "F",
+      "start": 6,
+      "end": 8
+    },
+    {
+      "job": "Z3",
+      "machine": "S",
+      "start": 6,
+      "end": 7
+    },
+    {
+      "job": "Z2",
+      "machine": "S",
+      "start": 8,
+      "end": 9
+    }
+  ]
+}

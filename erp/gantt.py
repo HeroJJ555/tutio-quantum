@@ -11,7 +11,7 @@ from erp.schedule import Schedule, makespan
 
 def plot_gantt(instance: Instance, schedule: Schedule, path: str | Path, title: str = "") -> None:
     machines = instance.machines
-    colors = dict(zip(instance.jobs, plt.get_cmap("tab10").colors))
+    colors = dict(zip(instance.jobs, plt.get_cmap("tab10").colors, strict=False))
     fig, ax = plt.subplots(figsize=(8, 0.7 * len(machines) + 1.2))
     for s in schedule:
         row = len(machines) - 1 - machines.index(s.machine)

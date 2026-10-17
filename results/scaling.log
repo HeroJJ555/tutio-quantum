@@ -1,0 +1,294 @@
+random_n3_s0: H=10, 60 vars, penalty worst=31.0, CP-SAT 0 (unbounded 0), EDD 0
+  sa run 0: wt=0 gap_h=0 feasible=1.0 t=1.704s
+  sa run 1: wt=0 gap_h=0 feasible=0.996 t=1.929s
+  sa run 2: wt=0 gap_h=0 feasible=0.999 t=1.826s
+  veloxq run 0: wt=0 gap_h=0 feasible=0.7642 t=3.844s
+  veloxq run 1: wt=0 gap_h=0 feasible=0.7729 t=2.434s
+  veloxq run 2: wt=0 gap_h=0 feasible=0.7832 t=2.414s
+random_n3_s0: H=10, 60 vars, penalty edd=1.5, CP-SAT 0 (unbounded 0), EDD 0
+  sa run 0: wt=0 gap_h=0 feasible=0.98 t=1.837s
+  sa run 1: wt=0 gap_h=0 feasible=0.972 t=1.664s
+  sa run 2: wt=0 gap_h=0 feasible=0.975 t=1.699s
+  veloxq run 0: wt=0 gap_h=0 feasible=0.4617 t=3.757s
+  veloxq run 1: wt=0 gap_h=0 feasible=0.4639 t=2.037s
+  veloxq run 2: wt=0 gap_h=0 feasible=0.4626 t=2.122s
+random_n3_s1: H=13, 69 vars, penalty worst=26.0, CP-SAT 4 (unbounded 4), EDD 8
+  sa run 0: wt=4 gap_h=0 feasible=0.985 t=2.667s
+  sa run 1: wt=4 gap_h=0 feasible=0.989 t=2.6s
+  sa run 2: wt=4 gap_h=0 feasible=0.987 t=2.822s
+  veloxq run 0: wt=4 gap_h=0 feasible=0.5879 t=4.193s
+  veloxq run 1: wt=4 gap_h=0 feasible=0.5813 t=2.39s
+  veloxq run 2: wt=4 gap_h=0 feasible=0.583 t=2.477s
+random_n3_s1: H=13, 69 vars, penalty edd=9.7, CP-SAT 4 (unbounded 4), EDD 8
+  sa run 0: wt=4 gap_h=0 feasible=0.958 t=1.965s
+  sa run 1: wt=4 gap_h=0 feasible=0.957 t=1.928s
+  sa run 2: wt=4 gap_h=0 feasible=0.962 t=1.963s
+  veloxq run 0: wt=4 gap_h=0 feasible=0.6992 t=3.684s
+  veloxq run 1: wt=4 gap_h=0 feasible=0.6946 t=2.297s
+  veloxq run 2: wt=4 gap_h=0 feasible=0.6816 t=2.356s
+random_n3_s2: H=12, 69 vars, penalty worst=52.0, CP-SAT 9 (unbounded 9), EDD 12
+  sa run 0: wt=9 gap_h=0 feasible=0.997 t=1.942s
+  sa run 1: wt=9 gap_h=0 feasible=0.998 t=1.892s
+  sa run 2: wt=9 gap_h=0 feasible=0.997 t=1.884s
+  veloxq run 0: wt=9 gap_h=0 feasible=0.4927 t=3.714s
+  veloxq run 1: wt=9 gap_h=0 feasible=0.4963 t=2.565s
+  veloxq run 2: wt=9 gap_h=0 feasible=0.4929 t=2.402s
+random_n3_s2: H=12, 69 vars, penalty edd=13.6, CP-SAT 9 (unbounded 9), EDD 12
+  sa run 0: wt=9 gap_h=0 feasible=0.304 t=1.78s
+  sa run 1: wt=9 gap_h=0 feasible=0.311 t=1.852s
+  sa run 2: wt=9 gap_h=0 feasible=0.341 t=1.82s
+  veloxq run 0: wt=9 gap_h=0 feasible=0.1487 t=3.816s
+  veloxq run 1: wt=9 gap_h=0 feasible=0.155 t=2.16s
+  veloxq run 2: wt=9 gap_h=0 feasible=0.1509 t=2.163s
+random_n4_s0: H=14, 117 vars, penalty worst=65.0, CP-SAT 6 (unbounded 6), EDD 9
+  sa run 0: wt=6 gap_h=0 feasible=0.954 t=3.763s
+  sa run 1: wt=8 gap_h=2 feasible=0.96 t=4.266s
+  sa run 2: wt=8 gap_h=2 feasible=0.977 t=3.768s
+  veloxq run 0: wt=6 gap_h=0 feasible=0.511 t=4.784s
+  veloxq run 1: wt=6 gap_h=0 feasible=0.5107 t=3.682s
+  veloxq run 2: wt=6 gap_h=0 feasible=0.5029 t=3.49s
+random_n4_s0: H=14, 117 vars, penalty edd=10.5, CP-SAT 6 (unbounded 6), EDD 9
+  sa run 0: wt=6 gap_h=0 feasible=0.609 t=4.465s
+  sa run 1: wt=6 gap_h=0 feasible=0.611 t=4.102s
+  sa run 2: wt=6 gap_h=0 feasible=0.621 t=4.335s
+  veloxq run 0: wt=6 gap_h=0 feasible=0.2146 t=4.713s
+  veloxq run 1: wt=6 gap_h=0 feasible=0.2197 t=2.849s
+  veloxq run 2: wt=6 gap_h=0 feasible=0.2039 t=2.918s
+random_n4_s1: H=14, 105 vars, penalty worst=51.0, CP-SAT 13 (unbounded 13), EDD 21
+  sa run 0: wt=15 gap_h=2 feasible=0.896 t=3.831s
+  sa run 1: wt=16 gap_h=3 feasible=0.909 t=3.777s
+  sa run 2: wt=16 gap_h=3 feasible=0.9 t=3.986s
+  veloxq run 0: wt=13 gap_h=0 feasible=0.5596 t=4.734s
+  veloxq run 1: wt=13 gap_h=0 feasible=0.5388 t=3.137s
+  veloxq run 2: wt=13 gap_h=0 feasible=0.541 t=3.329s
+random_n4_s1: H=14, 105 vars, penalty edd=22.7, CP-SAT 13 (unbounded 13), EDD 21
+  sa run 0: wt=13 gap_h=0 feasible=0.765 t=3.678s
+  sa run 1: wt=13 gap_h=0 feasible=0.763 t=3.536s
+  sa run 2: wt=13 gap_h=0 feasible=0.755 t=3.063s
+  veloxq run 0: wt=13 gap_h=0 feasible=0.5029 t=4.215s
+  veloxq run 1: wt=13 gap_h=0 feasible=0.4941 t=3.01s
+  veloxq run 2: wt=13 gap_h=0 feasible=0.4998 t=2.828s
+random_n4_s2: H=17, 144 vars, penalty worst=42.0, CP-SAT 6 (unbounded 6), EDD 14
+  sa run 0: wt=9 gap_h=3 feasible=0.988 t=4.457s
+  sa run 1: wt=9 gap_h=3 feasible=0.981 t=4.398s
+  sa run 2: wt=10 gap_h=4 feasible=0.983 t=4.417s
+  veloxq run 0: wt=8 gap_h=2 feasible=0.1555 t=4.542s
+  veloxq run 1: wt=10 gap_h=4 feasible=0.1538 t=3.138s
+  veloxq run 2: wt=12 gap_h=6 feasible=0.1545 t=3.185s
+random_n4_s2: H=17, 144 vars, penalty edd=15.6, CP-SAT 6 (unbounded 6), EDD 14
+  sa run 0: wt=6 gap_h=0 feasible=0.877 t=5.702s
+  sa run 1: wt=6 gap_h=0 feasible=0.879 t=4.499s
+  sa run 2: wt=6 gap_h=0 feasible=0.886 t=4.566s
+  veloxq run 0: wt=6 gap_h=0 feasible=0.2256 t=4.416s
+  veloxq run 1: wt=6 gap_h=0 feasible=0.2258 t=3.034s
+  veloxq run 2: wt=6 gap_h=0 feasible=0.2305 t=2.938s
+random_n5_s0: H=16, 171 vars, penalty worst=74.0, CP-SAT 12 (unbounded 12), EDD 15
+  sa run 0: wt=15 gap_h=3 feasible=0.765 t=5.899s
+  sa run 1: wt=16 gap_h=4 feasible=0.761 t=6.324s
+  sa run 2: wt=16 gap_h=4 feasible=0.771 t=5.778s
+  veloxq run 0: wt=14 gap_h=2 feasible=0.2021 t=5.168s
+  veloxq run 1: wt=18 gap_h=6 feasible=0.199 t=3.689s
+  veloxq run 2: wt=14 gap_h=2 feasible=0.1951 t=3.311s
+random_n5_s0: H=16, 171 vars, penalty edd=16.5, CP-SAT 12 (unbounded 12), EDD 15
+  sa run 0: wt=12 gap_h=0 feasible=0.469 t=5.336s
+  sa run 1: wt=12 gap_h=0 feasible=0.497 t=6.477s
+  sa run 2: wt=12 gap_h=0 feasible=0.462 t=5.652s
+  veloxq run 0: wt=12 gap_h=0 feasible=0.1406 t=4.464s
+  veloxq run 1: wt=12 gap_h=0 feasible=0.147 t=3.246s
+  veloxq run 2: wt=12 gap_h=0 feasible=0.1458 t=3.171s
+random_n5_s1: H=18, 195 vars, penalty worst=116.0, CP-SAT 27 (unbounded 27), EDD 42
+  sa run 0: wt=34 gap_h=7 feasible=0.939 t=8.348s
+  sa run 1: wt=32 gap_h=5 feasible=0.928 t=7.927s
+  sa run 2: wt=32 gap_h=5 feasible=0.927 t=11.631s
+  veloxq run 0: wt=30 gap_h=3 feasible=0.2297 t=5.167s
+  veloxq run 1: wt=37 gap_h=10 feasible=0.2224 t=3.417s
+  veloxq run 2: wt=33 gap_h=6 feasible=0.2253 t=3.479s
+random_n5_s1: H=18, 195 vars, penalty edd=43.6, CP-SAT 27 (unbounded 27), EDD 42
+  sa run 0: wt=29 gap_h=2 feasible=0.857 t=6.831s
+  sa run 1: wt=32 gap_h=5 feasible=0.868 t=6.637s
+  sa run 2: wt=29 gap_h=2 feasible=0.853 t=6.793s
+  veloxq run 0: wt=31 gap_h=4 feasible=0.2573 t=4.92s
+  veloxq run 1: wt=28 gap_h=1 feasible=0.2554 t=3.56s
+  veloxq run 2: wt=31 gap_h=4 feasible=0.2668 t=3.65s
+random_n5_s2: H=18, 192 vars, penalty worst=88.0, CP-SAT 22 (unbounded 22), EDD 29
+  sa run 0: wt=28 gap_h=6 feasible=0.775 t=6.676s
+  sa run 1: wt=30 gap_h=8 feasible=0.767 t=7.222s
+  sa run 2: wt=30 gap_h=8 feasible=0.771 t=7.538s
+  veloxq run 0: wt=29 gap_h=7 feasible=0.1814 t=4.877s
+  veloxq run 1: wt=30 gap_h=8 feasible=0.1919 t=3.781s
+  veloxq run 2: wt=31 gap_h=9 feasible=0.1841 t=4.849s
+random_n5_s2: H=18, 192 vars, penalty edd=30.6, CP-SAT 22 (unbounded 22), EDD 29
+  sa run 0: wt=23 gap_h=1 feasible=0.326 t=8.451s
+  sa run 1: wt=26 gap_h=4 feasible=0.337 t=7.251s
+  sa run 2: wt=27 gap_h=5 feasible=0.334 t=8.337s
+  veloxq run 0: wt=31 gap_h=9 feasible=0.0933 t=4.661s
+  veloxq run 1: wt=26 gap_h=4 feasible=0.0967 t=2.871s
+  veloxq run 2: wt=27 gap_h=5 feasible=0.0911 t=2.818s
+random_n6_s0: H=19, 255 vars, penalty worst=145.0, CP-SAT 26 (unbounded 26), EDD 36
+  sa run 0: wt=35 gap_h=9 feasible=0.612 t=8.607s
+  sa run 1: wt=31 gap_h=5 feasible=0.599 t=8.689s
+  sa run 2: wt=34 gap_h=8 feasible=0.59 t=8.719s
+  veloxq run 0: wt=39 gap_h=13 feasible=0.1082 t=4.118s
+  veloxq run 1: wt=39 gap_h=13 feasible=0.1079 t=3.488s
+  veloxq run 2: wt=37 gap_h=11 feasible=0.1235 t=3.474s
+random_n6_s0: H=19, 255 vars, penalty edd=37.5, CP-SAT 26 (unbounded 26), EDD 36
+  sa run 0: wt=28 gap_h=2 feasible=0.311 t=8.16s
+  sa run 1: wt=30 gap_h=4 feasible=0.283 t=8.524s
+  sa run 2: wt=33 gap_h=7 feasible=0.299 t=8.991s
+  veloxq run 0: wt=29 gap_h=3 feasible=0.0347 t=4.054s
+  veloxq run 1: wt=32 gap_h=6 feasible=0.0354 t=3.339s
+  veloxq run 2: wt=29 gap_h=3 feasible=0.0366 t=3.222s
+random_n6_s1: H=18, 234 vars, penalty worst=94.0, CP-SAT 17 (unbounded 17), EDD 22
+  sa run 0: wt=20 gap_h=3 feasible=0.593 t=9.467s
+  sa run 1: wt=23 gap_h=6 feasible=0.586 t=10.2s
+  sa run 2: wt=25 gap_h=8 feasible=0.575 t=9.331s
+  veloxq run 0: wt=25 gap_h=8 feasible=0.1667 t=5.815s
+  veloxq run 1: wt=25 gap_h=8 feasible=0.1729 t=4.075s
+  veloxq run 2: wt=22 gap_h=5 feasible=0.1721 t=4.213s
+random_n6_s1: H=18, 234 vars, penalty edd=23.6, CP-SAT 17 (unbounded 17), EDD 22
+  sa run 0: wt=18 gap_h=1 feasible=0.311 t=8.653s
+  sa run 1: wt=19 gap_h=2 feasible=0.29 t=8.85s
+  sa run 2: wt=19 gap_h=2 feasible=0.316 t=8.071s
+  veloxq run 0: wt=20 gap_h=3 feasible=0.0771 t=5.034s
+  veloxq run 1: wt=21 gap_h=4 feasible=0.0803 t=3.747s
+  veloxq run 2: wt=20 gap_h=3 feasible=0.0808 t=3.573s
+random_n6_s2: H=19, 255 vars, penalty worst=122.0, CP-SAT 25 (unbounded 25), EDD 40
+  sa run 0: wt=34 gap_h=9 feasible=0.762 t=11.503s
+  sa run 1: wt=26 gap_h=1 feasible=0.79 t=12.409s
+  sa run 2: wt=33 gap_h=8 feasible=0.775 t=10.533s
+  veloxq run 0: wt=37 gap_h=12 feasible=0.1604 t=5.311s
+  veloxq run 1: wt=37 gap_h=12 feasible=0.1567 t=4.062s
+  veloxq run 2: wt=35 gap_h=10 feasible=0.1604 t=4.0s
+random_n6_s2: H=19, 255 vars, penalty edd=41.6, CP-SAT 25 (unbounded 25), EDD 40
+  sa run 0: wt=33 gap_h=8 feasible=0.615 t=10.688s
+  sa run 1: wt=32 gap_h=7 feasible=0.611 t=12.926s
+  sa run 2: wt=29 gap_h=4 feasible=0.604 t=11.57s
+  veloxq run 0: wt=33 gap_h=8 feasible=0.0896 t=5.694s
+  veloxq run 1: wt=33 gap_h=8 feasible=0.0901 t=3.839s
+  veloxq run 2: wt=31 gap_h=6 feasible=0.0891 t=3.945s
+random_n7_s0: H=20, 318 vars, penalty worst=161.0, CP-SAT 29 (unbounded 29), EDD 46
+  sa run 0: wt=43 gap_h=14 feasible=0.283 t=15.64s
+  sa run 1: wt=45 gap_h=16 feasible=0.274 t=11.543s
+  sa run 2: wt=45 gap_h=16 feasible=0.275 t=11.071s
+  veloxq run 0: wt=39 gap_h=10 feasible=0.0354 t=6.481s
+  veloxq run 1: wt=49 gap_h=20 feasible=0.0381 t=4.097s
+  veloxq run 2: wt=46 gap_h=17 feasible=0.0369 t=4.111s
+random_n7_s0: H=20, 318 vars, penalty edd=47.6, CP-SAT 29 (unbounded 29), EDD 46
+  sa run 0: wt=35 gap_h=6 feasible=0.2 t=15.41s
+  sa run 1: wt=40 gap_h=11 feasible=0.2 t=12.06s
+  sa run 2: wt=38 gap_h=9 feasible=0.207 t=11.455s
+  veloxq run 0: wt=39 gap_h=10 feasible=0.0684 t=5.271s
+  veloxq run 1: wt=42 gap_h=13 feasible=0.0715 t=3.645s
+  veloxq run 2: wt=40 gap_h=11 feasible=0.0708 t=3.821s
+random_n7_s1: H=22, 360 vars, penalty worst=198.0, CP-SAT 33 (unbounded 33), EDD 58
+  sa run 0: wt=66 gap_h=33 feasible=0.865 t=17.061s
+  sa run 1: wt=65 gap_h=32 feasible=0.85 t=15.906s
+  sa run 2: wt=64 gap_h=31 feasible=0.83 t=16.274s
+  veloxq run 0: wt=72 gap_h=39 feasible=0.1511 t=6.128s
+  veloxq run 1: wt=59 gap_h=26 feasible=0.1428 t=4.225s
+  veloxq run 2: wt=51 gap_h=18 feasible=0.1477 t=4.481s
+random_n7_s1: H=22, 360 vars, penalty edd=59.5, CP-SAT 33 (unbounded 33), EDD 58
+  sa run 0: wt=52 gap_h=19 feasible=0.717 t=15.7s
+  sa run 1: wt=58 gap_h=25 feasible=0.703 t=15.278s
+  sa run 2: wt=52 gap_h=19 feasible=0.705 t=15.531s
+  veloxq run 0: wt=54 gap_h=21 feasible=0.116 t=6.384s
+  veloxq run 1: wt=44 gap_h=11 feasible=0.1033 t=4.668s
+  veloxq run 2: wt=51 gap_h=18 feasible=0.1128 t=7.637s
+random_n7_s2: H=20, 324 vars, penalty worst=189.0, CP-SAT 25 (unbounded 25), EDD 50
+  sa run 0: wt=41 gap_h=16 feasible=0.69 t=17.636s
+  sa run 1: wt=38 gap_h=13 feasible=0.681 t=13.645s
+  sa run 2: wt=45 gap_h=20 feasible=0.689 t=13.461s
+  veloxq run 0: wt=44 gap_h=19 feasible=0.063 t=5.706s
+  veloxq run 1: wt=52 gap_h=27 feasible=0.0681 t=4.224s
+  veloxq run 2: wt=42 gap_h=17 feasible=0.0688 t=4.375s
+random_n7_s2: H=20, 324 vars, penalty edd=51.6, CP-SAT 25 (unbounded 25), EDD 50
+  sa run 0: wt=37 gap_h=12 feasible=0.551 t=12.571s
+  sa run 1: wt=35 gap_h=10 feasible=0.575 t=12.01s
+  sa run 2: wt=32 gap_h=7 feasible=0.557 t=13.779s
+  veloxq run 0: wt=31 gap_h=6 feasible=0.1052 t=6.852s
+  veloxq run 1: wt=31 gap_h=6 feasible=0.1057 t=4.447s
+  veloxq run 2: wt=34 gap_h=9 feasible=0.1052 t=4.277s
+random_n8_s0: H=24, 456 vars, penalty worst=243.0, CP-SAT 51 (unbounded 51), EDD 81
+  sa run 0: wt=79 gap_h=28 feasible=0.353 t=25.323s
+  sa run 1: wt=85 gap_h=34 feasible=0.373 t=20.525s
+  sa run 2: wt=84 gap_h=33 feasible=0.338 t=20.623s
+  veloxq run 0: wt=87 gap_h=36 feasible=0.0532 t=7.121s
+  veloxq run 1: wt=79 gap_h=28 feasible=0.0574 t=5.488s
+  veloxq run 2: wt=85 gap_h=34 feasible=0.0588 t=4.662s
+random_n8_s0: H=24, 456 vars, penalty edd=82.6, CP-SAT 51 (unbounded 51), EDD 81
+  sa run 0: wt=76 gap_h=25 feasible=0.262 t=31.371s
+  sa run 1: wt=77 gap_h=26 feasible=0.271 t=18.216s
+  sa run 2: wt=77 gap_h=26 feasible=0.294 t=19.698s
+  veloxq run 0: wt=84 gap_h=33 feasible=0.0564 t=6.37s
+  veloxq run 1: wt=80 gap_h=29 feasible=0.0596 t=4.437s
+  veloxq run 2: wt=82 gap_h=31 feasible=0.054 t=4.398s
+random_n8_s1: H=26, 501 vars, penalty worst=194.0, CP-SAT 20 (unbounded 20), EDD 39
+  sa run 0: wt=54 gap_h=34 feasible=0.786 t=27.601s
+  sa run 1: wt=57 gap_h=37 feasible=0.779 t=38.543s
+  sa run 2: wt=62 gap_h=42 feasible=0.788 t=26.159s
+  veloxq run 0: wt=62 gap_h=42 feasible=0.0593 t=7.377s
+  veloxq run 1: wt=64 gap_h=44 feasible=0.0784 t=6.447s
+  veloxq run 2: wt=69 gap_h=49 feasible=0.0703 t=5.936s
+random_n8_s1: H=26, 501 vars, penalty edd=40.6, CP-SAT 20 (unbounded 20), EDD 39
+  sa run 0: wt=45 gap_h=25 feasible=0.364 t=22.997s
+  sa run 1: wt=43 gap_h=23 feasible=0.353 t=21.398s
+  sa run 2: wt=35 gap_h=15 feasible=0.37 t=22.146s
+  veloxq run 0: wt=45 gap_h=25 feasible=0.0154 t=7.023s
+  veloxq run 1: wt=48 gap_h=28 feasible=0.0137 t=5.256s
+  veloxq run 2: wt=43 gap_h=23 feasible=0.0142 t=4.711s
+random_n8_s2: H=22, 423 vars, penalty worst=212.0, CP-SAT 38 (unbounded 38), EDD 65
+  sa run 0: wt=66 gap_h=28 feasible=0.664 t=23.58s
+  sa run 1: wt=68 gap_h=30 feasible=0.701 t=17.77s
+  sa run 2: wt=68 gap_h=30 feasible=0.691 t=21.2s
+  veloxq run 0: wt=65 gap_h=27 feasible=0.0474 t=6.426s
+  veloxq run 1: wt=60 gap_h=22 feasible=0.0537 t=4.889s
+  veloxq run 2: wt=68 gap_h=30 feasible=0.054 t=4.692s
+random_n8_s2: H=22, 423 vars, penalty edd=66.6, CP-SAT 38 (unbounded 38), EDD 65
+  sa run 0: wt=61 gap_h=23 feasible=0.587 t=18.659s
+  sa run 1: wt=62 gap_h=24 feasible=0.581 t=22.244s
+  sa run 2: wt=58 gap_h=20 feasible=0.58 t=23.267s
+  veloxq run 0: wt=63 gap_h=25 feasible=0.041 t=6.167s
+  veloxq run 1: wt=55 gap_h=17 feasible=0.0378 t=5.816s
+  veloxq run 2: wt=63 gap_h=25 feasible=0.04 t=4.59s
+random_n10_s0: H=28, 684 vars, penalty worst=362.0, CP-SAT 68 (unbounded 68), EDD 109
+  sa run 0: wt=147 gap_h=79 feasible=0.205 t=29.37s
+  sa run 1: wt=128 gap_h=60 feasible=0.191 t=30.193s
+  sa run 2: wt=124 gap_h=56 feasible=0.219 t=34.221s
+  veloxq run 0: wt=138 gap_h=70 feasible=0.0059 t=6.224s
+  veloxq run 1: wt=116 gap_h=48 feasible=0.0078 t=5.708s
+  veloxq run 2: wt=120 gap_h=52 feasible=0.0085 t=5.772s
+random_n10_s0: H=28, 684 vars, penalty edd=110.5, CP-SAT 68 (unbounded 68), EDD 109
+  sa run 0: wt=110 gap_h=42 feasible=0.184 t=32.475s
+  sa run 1: wt=114 gap_h=46 feasible=0.188 t=30.833s
+  sa run 2: wt=125 gap_h=57 feasible=0.182 t=29.404s
+  veloxq run 0: wt=124 gap_h=56 feasible=0.0066 t=6.667s
+  veloxq run 1: wt=127 gap_h=59 feasible=0.0076 t=6.527s
+  veloxq run 2: wt=114 gap_h=46 feasible=0.0088 t=6.088s
+random_n10_s1: H=28, 690 vars, penalty worst=346.0, CP-SAT 79 (unbounded 79), EDD 98
+  sa run 0: wt=139 gap_h=60 feasible=0.405 t=35.171s
+  sa run 1: wt=130 gap_h=51 feasible=0.395 t=44.598s
+  sa run 2: wt=138 gap_h=59 feasible=0.409 t=34.354s
+  veloxq run 0: wt=155 gap_h=76 feasible=0.0088 t=42.243s
+  veloxq run 1: wt=150 gap_h=71 feasible=0.0085 t=5.933s
+  veloxq run 2: wt=167 gap_h=88 feasible=0.0059 t=5.679s
+random_n10_s1: H=28, 690 vars, penalty edd=99.6, CP-SAT 79 (unbounded 79), EDD 98
+  sa run 0: wt=130 gap_h=51 feasible=0.202 t=31.762s
+  sa run 1: wt=134 gap_h=55 feasible=0.218 t=37.066s
+  sa run 2: wt=129 gap_h=50 feasible=0.206 t=34.954s
+  veloxq run 0: wt=130 gap_h=51 feasible=0.0061 t=7.653s
+  veloxq run 1: wt=144 gap_h=65 feasible=0.0088 t=6.238s
+  veloxq run 2: wt=161 gap_h=82 feasible=0.0071 t=6.002s
+random_n10_s2: H=29, 723 vars, penalty worst=385.0, CP-SAT 51 (unbounded 51), EDD 126
+  sa run 0: wt=135 gap_h=84 feasible=0.415 t=36.693s
+  sa run 1: wt=111 gap_h=60 feasible=0.395 t=35.955s
+  sa run 2: wt=129 gap_h=78 feasible=0.403 t=43.704s
+  veloxq run 0: wt=120 gap_h=69 feasible=0.0056 t=7.782s
+  veloxq run 1: wt=144 gap_h=93 feasible=0.0061 t=5.934s
+  veloxq run 2: wt=164 gap_h=113 feasible=0.0032 t=6.36s
+random_n10_s2: H=29, 723 vars, penalty edd=127.6, CP-SAT 51 (unbounded 51), EDD 126
+  sa run 0: wt=106 gap_h=55 feasible=0.368 t=36.564s
+  sa run 1: wt=113 gap_h=62 feasible=0.337 t=34.94s
+  sa run 2: wt=111 gap_h=60 feasible=0.36 t=34.524s
+  veloxq run 0: wt=149 gap_h=98 feasible=0.0059 t=7.944s
+  veloxq run 1: wt=146 gap_h=95 feasible=0.0042 t=6.234s
+  veloxq run 2: wt=127 gap_h=76 feasible=0.0046 t=6.257s

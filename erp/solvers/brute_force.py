@@ -1,7 +1,7 @@
 import numpy as np
 
 from erp.qubo_model import QuboModel
-from erp.solvers import QuboResult
+from erp.solvers.base import QuboResult
 
 
 def solve_brute_force(model: QuboModel) -> QuboResult:

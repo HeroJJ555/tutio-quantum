@@ -1,17 +1,14 @@
 from itertools import permutations
-from pathlib import Path
 
 import numpy as np
 import pytest
+from instances import A, B
 
-from erp.instance import load_instance
+from erp.instance import Instance, Operation
 from erp.qubo_permutation import PermutationQubo
 from erp.schedule import makespan, permutation_schedule, validate
 from erp.solvers.brute_force import solve_brute_force
 
-ROOT = Path(__file__).resolve().parents[1]
-A = load_instance(ROOT / "data" / "instance_2x2.json")
-B = load_instance(ROOT / "data" / "instance_3x3.json")
 CASES = [(A, False, 4), (A, True, 2), (B, False, 9), (B, True, 6)]
 
 
@@ -39,8 +36,7 @@ def test_every_order_has_zero_penalty_and_exact_cost(instance, implicit, num_var
         bits = model.encode(list(order))
         assert model.penalty_energy(bits) == 0
         assert model.order(bits) == list(order)
-        cmax = makespan(permutation_schedule(instance, list(order)))
-        assert model.energy(bits) == pytest.approx(cmax - lower)
+        assert model.energy(bits) == pytest.approx(makespan(permutation_schedule(instance, list(order))) - lower)
 
 
 @pytest.mark.parametrize("instance,implicit,num_vars", CASES)
@@ -61,7 +57,6 @@ def test_ground_state_is_optimal_and_infeasible_states_cost_more(instance, impli
 
 
 def test_more_than_three_jobs_rejected():
-    from erp.instance import Instance, Operation
     ops = tuple(Operation(f"Z{j}", "T", 1, 0) for j in range(4))
     with pytest.raises(ValueError):
         PermutationQubo(Instance("four_jobs", ops))

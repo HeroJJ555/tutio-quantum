@@ -1,0 +1,17 @@
+{
+  "problem": "erp_scheduling",
+  "jobs": [
+    { "id": "Z1", "due_date": 5, "weight": 1, "operations": [
+        { "machine": "T", "duration": 2 },
+        { "machine": "F", "duration": 1 },
+        { "machine": "S", "duration": 2 } ] },
+    { "id": "Z2", "due_date": 7, "weight": 1, "operations": [
+        { "machine": "T", "duration": 1 },
+        { "machine": "F", "duration": 2 },
+        { "machine": "S", "duration": 1 } ] },
+    { "id": "Z3", "due_date": 7, "weight": 3, "operations": [
+        { "machine": "T", "duration": 2 },
+        { "machine": "F", "duration": 2 },
+        { "machine": "S", "duration": 1 } ] }
+  ]
+}

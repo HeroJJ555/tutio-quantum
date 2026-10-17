@@ -1,24 +1,19 @@
 from itertools import product
-from pathlib import Path
 
 import pytest
+from instances import ROOT, A, B
 
-from erp.instance import load_instance
 from erp.qubo_time_indexed import TimeIndexedQubo
 from erp.schedule import ScheduledOp, makespan, read_schedule, validate
 from erp.solvers.brute_force import solve_brute_force
 from erp.solvers.cpsat import solve_cpsat
 
-ROOT = Path(__file__).resolve().parents[1]
-A = load_instance(ROOT / "data" / "instance_2x2.json")
-B = load_instance(ROOT / "data" / "instance_3x3.json")
-
 
 def one_hot_assignments(model):
     for starts in product(*model.windows.values()):
         bits = [0] * model.num_variables
-        for o, t in enumerate(starts):
-            bits[model.index[(o, t)]] = 1
+        for op, t in zip(model.windows, starts, strict=True):
+            bits[model.index[(op, t)]] = 1
         yield bits
 
 
@@ -51,15 +46,15 @@ def test_each_constraint_type_is_penalised():
     assert model.penalty_energy(model.encode(good)) == 0
 
     precedence = [ScheduledOp("Z2", "T", 0, 1), ScheduledOp("Z2", "F", 1, 3),
-                  ScheduledOp("Z1", "T", 1, 3), ScheduledOp("Z1", "F", 2, 3)]  # F before T ends
+                  ScheduledOp("Z1", "T", 1, 3), ScheduledOp("Z1", "F", 2, 3)]
     machine = [ScheduledOp("Z2", "T", 0, 1), ScheduledOp("Z2", "F", 2, 4),
-               ScheduledOp("Z1", "T", 0, 2), ScheduledOp("Z1", "F", 3, 4)]  # T used twice at t=0
+               ScheduledOp("Z1", "T", 0, 2), ScheduledOp("Z1", "F", 3, 4)]
     for bad in (precedence, machine):
         assert validate(A, bad)
         assert model.penalty_energy(model.encode(bad)) > 0
 
     no_start = model.encode(good)
-    no_start[model.index[(0, 1)]] = 0  # Z1/T never starts
+    no_start[model.index[(model.ops[0], 1)]] = 0
     assert model.penalty_energy(no_start) > 0
 
 

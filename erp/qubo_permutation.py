@@ -1,75 +1,67 @@
-"""Permutation QUBO: y[j, p] = 1 iff job j is at position p of the common machine order.
-
-For makespan on <= 3 machines some permutation schedule is optimal, so searching over job
-orders loses nothing. The first n-1 positions fix the order, hence the exact makespan is a
-polynomial of order n-1 in y: quadratic only for n <= 3 jobs.
-
-implicit_last=True drops the variables of the last position (n^2 - n instead of n^2);
-the remaining job is placed there by the decoder.
-
-The objective is C(order) - lower bound for every order, i.e. it is built by evaluating all
-n! orders classically. That is cheap for n = 3 but is the hidden price of this encoding.
-"""
-
-from itertools import combinations, permutations
+from itertools import permutations
 
 from erp.instance import Instance
+from erp.objective import Objective
 from erp.qubo_model import QuboModel
-from erp.schedule import Schedule, makespan, permutation_schedule
+from erp.schedule import Schedule, makespan, permutation_schedule, weighted_tardiness
 
 
 class PermutationQubo(QuboModel):
-    def __init__(self, instance: Instance, implicit_last: bool = False, penalty: float | None = None):
-        jobs = instance.jobs
-        n = len(jobs)
-        if n > 3:
-            raise ValueError("the exact makespan objective is quadratic only for n <= 3 jobs")
+    def __init__(self, instance: Instance, implicit_last: bool = False, penalty: float | None = None,
+                 objective: Objective = Objective.MAKESPAN):
         self.instance = instance
-        self.jobs = jobs
+        self.jobs = instance.jobs
+        self.objective = Objective(objective)
         self.implicit_last = implicit_last
+        n = len(self.jobs)
+        if n > 3:
+            raise ValueError("the exact objective is quadratic only for n <= 3 jobs")
         self.positions = n - 1 if implicit_last else n
-
-        lower = instance.makespan_lower_bound()
-        self.order_cost = {
-            order: makespan(permutation_schedule(instance, list(order))) - lower for order in permutations(jobs)
-        }
-        # Any violation costs >= penalty, more than any objective value a violation could avoid.
-        super().__init__(penalty if penalty is not None else 1.0 + max(self.order_cost.values()))
-
-        self._set_variables([(j, p) for j in jobs for p in range(self.positions)])
-        self.label = f"permutation QUBO{' (implicit last position)' if implicit_last else ''}, {self.num_variables} vars"
+        self.order_cost = self._order_costs()
+        if penalty is None:
+            penalty = max(self.order_cost.values()) + 1.0
+        super().__init__([(j, p) for j in self.jobs for p in range(self.positions)], penalty)
+        self.label = (f"permutation QUBO{' (implicit last position)' if implicit_last else ''}"
+                      f"{', weighted tardiness' if self.objective is Objective.TARDINESS else ''}, "
+                      f"{self.num_variables} vars")
 
         for p in range(self.positions):
-            self._add_exactly_one([self.index[(j, p)] for j in jobs])
-        for j in jobs:
+            self._add_exactly_one([self.index[(j, p)] for j in self.jobs])
+        for j in self.jobs:
             idx = [self.index[(j, p)] for p in range(self.positions)]
-            if implicit_last:  # at most one position
-                for a, b in combinations(idx, 2):
-                    self._add(self.q_penalty, a, b, 1.0)
+            if implicit_last:
+                self._add_at_most_one(idx)
             else:
                 self._add_exactly_one(idx)
+        self._add_order_costs()
 
+    def _order_costs(self) -> dict[tuple[str, ...], float]:
+        lower = self.instance.makespan_lower_bound()
+        schedules = {order: permutation_schedule(self.instance, list(order)) for order in permutations(self.jobs)}
+        extra = {order: makespan(s) - lower for order, s in schedules.items()}
+        if self.objective is Objective.MAKESPAN:
+            return extra
+        scale = max(extra.values()) + 1
+        return {order: weighted_tardiness(self.instance, s) + extra[order] / scale for order, s in schedules.items()}
+
+    def _add_order_costs(self) -> None:
+        # the first n - 1 positions fix the order
         for order, cost in self.order_cost.items():
-            idx = [self.index[(order[p], p)] for p in range(n - 1)]
-            if len(idx) == 1:
-                self._add(self.q_objective, idx[0], idx[0], cost)
-            elif len(idx) == 2:
-                self._add(self.q_objective, idx[0], idx[1], cost)
+            idx = [self.index[(job, p)] for p, job in enumerate(order[:-1])]
+            if idx:
+                self._add_objective(idx[0], idx[-1], cost)
 
     def order(self, bits) -> list[str] | None:
         at = {}
-        for i, b in enumerate(bits):
+        for (job, p), b in zip(self.variables, bits, strict=True):
             if b:
-                j, p = self.variables[i]
                 if p in at:
                     return None
-                at[p] = j
+                at[p] = job
         if sorted(at) != list(range(self.positions)) or len(set(at.values())) != len(at):
             return None
         order = [at[p] for p in range(self.positions)]
-        if self.implicit_last:
-            order += [j for j in self.jobs if j not in order]
-        return order
+        return order + [j for j in self.jobs if j not in order] if self.implicit_last else order
 
     def decode(self, bits) -> Schedule | None:
         order = self.order(bits)
@@ -77,6 +69,6 @@ class PermutationQubo(QuboModel):
 
     def encode(self, order: list[str]) -> list[int]:
         bits = [0] * self.num_variables
-        for p, j in enumerate(order[: self.positions]):
-            bits[self.index[(j, p)]] = 1
+        for p, job in enumerate(order[: self.positions]):
+            bits[self.index[(job, p)]] = 1
         return bits
