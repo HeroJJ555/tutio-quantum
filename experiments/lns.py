@@ -28,16 +28,23 @@ def main() -> None:
     parser.add_argument("--out", type=Path, default=Path("results/lns.csv"))
     args = parser.parse_args()
 
+    new_file, done = not args.out.exists(), set()
+    if not new_file:
+        with args.out.open(newline="") as f:
+            done = {(r["instance"], r["solver"], r["run"]) for r in csv.DictReader(f)}
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    with args.out.open("w", newline="") as f:
+    with args.out.open("a", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=FIELDS)
-        writer.writeheader()
+        if new_file:
+            writer.writeheader()
         for n in args.sizes:
             for seed in range(args.instances):
                 case = Case.generate(n, seed, args.slack)
                 edd_wt = weighted_tardiness(case.instance, case.edd)
                 for solver in args.solvers:
                     for run in range(args.runs):
+                        if (case.instance.name, solver, str(run)) in done:
+                            continue
                         started = time.perf_counter()
                         result = large_neighbourhood_search(case.instance, case.edd, case.horizon, solver,
                                                             args.iterations, args.subset_size, seed=run)
