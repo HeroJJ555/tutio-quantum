@@ -200,3 +200,118 @@ random_n7_s0 veloxq run 0: EDD 46 -> 29 (CP-SAT 29), max 114 vars
 random_n7_s1 veloxq run 0: EDD 58 -> 35 (CP-SAT 33), max 152 vars
 random_n7_s2 veloxq run 0: EDD 50 -> 25 (CP-SAT 25), max 127 vars
 random_n8_s0 veloxq run 0: EDD 81 -> 51 (CP-SAT 51), max 140 vars
+Traceback (most recent call last):
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\httpx\_transports\default.py", line 101, in map_httpcore_exceptions
+    yield
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\httpx\_transports\default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\httpcore\_sync\connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+        pool_request.request
+    )
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 101, in handle_request
+    raise exc
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 78, in handle_request
+    stream = self._connect(request)
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\httpcore\_sync\connection.py", line 124, in _connect
+    stream = self._network_backend.connect_tcp(**kwargs)
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\httpcore\_backends\sync.py", line 207, in connect_tcp
+    with map_exceptions(exc_map):
+         ~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\Ryzen\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\httpcore\_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore.ConnectTimeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 203, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\experiments\lns.py", line 68, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\experiments\lns.py", line 49, in main
+    result = large_neighbourhood_search(case.instance, case.edd, case.horizon, solver,
+                                        args.iterations, args.subset_size, seed=run)
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\erp\lns.py", line 68, in large_neighbourhood_search
+    found = solve(solver, model, seed=seed * 1000 + it, reads=200)
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\erp\solvers\__init__.py", line 17, in solve
+    return solve_veloxq(model)
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\erp\solvers\veloxq.py", line 18, in solve_veloxq
+    sampleset = solver.sample(to_bqm(model), vartype="BINARY")
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\veloxq_sdk\api\solvers.py", line 195, in sample
+    file = File.from_instance(
+        instance,  # type: ignore[arg-type]
+    ...<4 lines>...
+        force=force,
+    )
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\veloxq_sdk\api\problems.py", line 772, in from_instance
+    return cls.from_bqm(
+           ~~~~~~~~~~~~^
+        bqm=instance,
+        ^^^^^^^^^^^^^
+    ...<4 lines>...
+        force=force,
+        ^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\veloxq_sdk\api\problems.py", line 927, in from_bqm
+    return cls._from_quadratic(
+           ~~~~~~~~~~~~~~~~~~~^
+        biases=bqm.linear,
+        ^^^^^^^^^^^^^^^^^^
+    ...<6 lines>...
+        offset=bqm.offset,
+        ^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\veloxq_sdk\api\problems.py", line 1075, in _from_quadratic
+    if not force and (file := cls._get_completed_file(name=name, problem=problem)):
+                              ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\veloxq_sdk\api\problems.py", line 677, in _get_completed_file
+    file = cls.get_file(name=name, problem=problem)
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\veloxq_sdk\api\problems.py", line 665, in get_file
+    response = cls._http.get("files", params=params)
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\httpx\_client.py", line 1053, in get
+    return self.request(
+           ~~~~~~~~~~~~^
+        "GET",
+        ^^^^^^
+    ...<7 lines>...
+        extensions=extensions,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\httpx\_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\httpx\_client.py", line 914, in send
+    response = self._send_handling_auth(
+        request,
+    ...<2 lines>...
+        history=[],
+    )
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\httpx\_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+        request,
+        follow_redirects=follow_redirects,
+        history=history,
+    )
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\httpx\_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\httpx\_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\httpx\_transports\default.py", line 249, in handle_request
+    with map_httpcore_exceptions():
+         ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Ryzen\AppData\Local\Python\pythoncore-3.14-64\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Ryzen\Desktop\Projects\tutio-quantum\.venv\Lib\site-packages\httpx\_transports\default.py", line 118, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectTimeout: timed out
